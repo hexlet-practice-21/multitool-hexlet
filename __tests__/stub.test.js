@@ -1,11 +1,8 @@
 // @ts-check
 
-import {expect, jest, test} from '@jest/globals';
-import returnTrue from "../src/scripts/empty.js";
-
+import { expect, test } from '@jest/globals';
+import returnTrue from '../src/scripts/empty.js';
 
 test('stub', () => {
-    expect(returnTrue()).toBe(true);
+  expect(returnTrue()).toBe(true);
 });
-
-

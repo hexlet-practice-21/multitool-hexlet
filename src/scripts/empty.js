@@ -1,5 +1,3 @@
-const returnTrue = () => {
-    return true;
-}
+const returnTrue = () => true;
 
 export default returnTrue;
