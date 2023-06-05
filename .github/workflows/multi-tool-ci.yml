@@ -55,7 +55,7 @@ jobs:
             ${{github.workspace}}/*.lcov:lcov
 
   deploy:
-    name: Деплоимся...
+    name: deploy
     runs-on: ubuntu-latest
     steps:
       - name: Ждем деплоя ⌛
@@ -63,7 +63,7 @@ jobs:
         with:
           render-token: ${{ secrets.RENDER_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          service-id: srv-multi-tool
+          service-id: ${{ secrets.RENDER_SERVICE_ID }}
           retries: 20
           wait: 16000
           sleep: 30000
