@@ -55,13 +55,14 @@ jobs:
             ${{github.workspace}}/*.lcov:lcov
 
   deploy:
-    name: Деплоимся...⌛
+    name: Деплоимся...
     runs-on: ubuntu-latest
     steps:
       - name: Ждем деплоя ⌛
         uses: bounceapp/render-action@0.6.0
         with:
           render-token: ${{ secrets.RENDER_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           service-id: srv-multi-tool
           retries: 20
           wait: 16000
