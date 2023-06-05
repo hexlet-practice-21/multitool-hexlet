@@ -7,3 +7,4 @@ import returnTrue from "../src/scripts/empty.js";
 test('stub', () => {
     expect(returnTrue()).toBe(true);
 });
+
