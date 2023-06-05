@@ -13,7 +13,7 @@ env:
 
 jobs:
 
-  branch-naming-rules:
+  Проверка имени ветки:
     runs-on: ubuntu-latest
     steps:
       - name: Проверка имени ветки
@@ -23,7 +23,7 @@ jobs:
           allowed_prefixes: 'feature,stable,fix' # All branches should start with the given prefix
           ignore: master,develop
 
-  build:
+  Сборка:
     if: github.event.pull_request.merged == false
     runs-on: ubuntu-latest
 
@@ -33,18 +33,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Используем Node.js ${{ matrix.node-version }}✅
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - name: Запускаем make install
+      - name: Запускаем make install 👁️
         run: make install
-      - name: Запускам линтер
+      - name: Запускам линтер 🧹
         run: make lint
-      - name: Прогоняем тесты
+      - name: Прогоняем тесты 📈
         run: make test
-      - name: Публикуем coverage
+      - name: Публикуем coverage 📤
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
@@ -53,3 +53,16 @@ jobs:
           debug: true
           coverageLocations: |
             ${{github.workspace}}/*.lcov:lcov
+
+  Развертывание:
+    name: Деплоимся...⌛
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ждем деплоя ⌛
+        uses: bounceapp/render-action@0.6.0
+        with:
+          render-token: ${{ secrets.RENDER_TOKEN }}
+          service-id: srv-multi-tool
+          retries: 20
+          wait: 16000
+          sleep: 30000
