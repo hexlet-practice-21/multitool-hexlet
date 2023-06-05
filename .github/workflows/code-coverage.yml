@@ -27,12 +27,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: make install
-      - run: make lint
-      - run: make test
-      - name: Запускаем тесты, публикуем coverage
-          # Publish code coverage on Code Climate
-        # https://github.com/paambaati/codeclimate-action
+      - name: Запускаем make install
+        run: make install
+      - name: Запускам линтер
+        run: make lint
+      - name: Прогоняем тесты
+        run: make test
+      - name: Публикуем coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
