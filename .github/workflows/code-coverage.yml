@@ -1,13 +1,10 @@
 name: Multi-tool CI
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
-    branches:
-      - master
-
+    types: [opened, reopened]
+    push:
+      branches: master
 env:
   CI: true
 
@@ -22,17 +19,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Используем Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: make install
-      - run: make lint
-      - run: make test
-      - name: Запускаем тесты, публикуем coverage
-         # Publish code coverage on Code Climate
-         # https://github.com/paambaati/codeclimate-action
+      - name: Запускаем make install
+        run: make install
+      - name: Прогоним линтер
+        run: make lint
+      - name : Запустим тесты
+        run: make test
+      - name: Публикуем coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
