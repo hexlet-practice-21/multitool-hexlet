@@ -12,6 +12,17 @@ env:
   CI: true
 
 jobs:
+
+  branch-naming-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Проверка имени ветки
+        uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: 'feature\/MLTL-[0-9]+'
+          allowed_prefixes: 'feature,stable,fix' # All branches should start with the given prefix
+          ignore: master,develop
+
   build:
     if: github.event.pull_request.merged == false
     runs-on: ubuntu-latest
