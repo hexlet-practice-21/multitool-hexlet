@@ -2,7 +2,6 @@
   "name": "multitool",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "simple-git-hooks": {
     "pre-push": "make lint"
   },
@@ -10,7 +9,9 @@
     "node": ">=14"
   },
   "scripts": {
-    "test": "npx jest"
+    "test": "npx jest",
+    "start": "parcel",
+    "build": "parcel build src/index.html --dist-dir public"
   },
   "type": "module",
   "keywords": [],
