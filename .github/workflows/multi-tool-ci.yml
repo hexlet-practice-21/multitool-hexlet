@@ -13,17 +13,17 @@ env:
 
 jobs:
 
-  Проверка имени ветки:
+  branch-naming-rules:
     runs-on: ubuntu-latest
     steps:
-      - name: Проверка имени ветки
+      - name: Проверка имени ветки🕵️
         uses: deepakputhraya/action-branch-name@master
         with:
           regex: 'feature\/MLTL-[0-9]+'
           allowed_prefixes: 'feature,stable,fix' # All branches should start with the given prefix
           ignore: master,develop
 
-  Сборка:
+  build:
     if: github.event.pull_request.merged == false
     runs-on: ubuntu-latest
 
@@ -54,7 +54,7 @@ jobs:
           coverageLocations: |
             ${{github.workspace}}/*.lcov:lcov
 
-  Развертывание:
+  deploy:
     name: Деплоимся...⌛
     runs-on: ubuntu-latest
     steps:
