@@ -13,6 +13,17 @@ env:
 
 jobs:
 
+  check-commit-message:
+    name: Check Commit Message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Проверка текста коммита🕵️
+        uses: gsactions/commit-message-checker@v2
+        with:
+          pattern: '\[[A-Za-z0-9]+\]\sMLTL-[0-9]+\s([A-Za-z]+( [A-Za-z]+)+)'
+          flags: 'gm'
+          error: 'Текст коммита должен быть в формате [TEXT] MLTL-9999 Commit message'
+
   branch-naming-rules:
     runs-on: ubuntu-latest
     steps:
