@@ -2,15 +2,17 @@
   "name": "multitool",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "simple-git-hooks": {
     "pre-push": "make lint"
   },
   "engines": {
     "node": ">=14"
   },
+  "source": "src/index.html",
   "scripts": {
-    "test": "npx jest"
+    "test": "npx jest",
+    "start": "parcel",
+    "build": "parcel build --dist-dir public"
   },
   "type": "module",
   "keywords": [],
