@@ -40,6 +40,4 @@ const fillExampleSelects = () => {
     }
 }
 
-document.addEventListener("DOMContentLoaded", fillExampleSelects); //будет срабатывать - один раз при загрузке html
-
 export default fillExampleSelects; //экспортнем по умолчанию для тестов

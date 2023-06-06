@@ -1,7 +1,4 @@
-const myButton = document.getElementById('myButton'); //получим кнопку по айдишнику
-
 const concat = () => {
-
     const firstSelectResult = document.getElementById("firstSelect"); //достаем значение из первого селекта
 
     const secondSelectResult = document.getElementById("secondSelect"); //достаем значение из второго селекта
@@ -17,5 +14,4 @@ const concat = () => {
         .append(div) //добавляем к бади новую ноду с текстом, в наших случаях будет не бади - инпут
 }
 
-
-myButton.addEventListener('click', concat) //добавлям слушателя к нашей кнопки, при нажатие - будем вызвыать concat
+export default concat;
