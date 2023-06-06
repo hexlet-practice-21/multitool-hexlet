@@ -10,36 +10,34 @@ const secondSelectValues = {
     "World": "World"
 }
 
-const firstSelectDropDown = document.getElementById("firstSelect");
 
-const secondSelectDropDown = document.getElementById("secondSelect");
+const fillExampleSelects = () => {
+    const firstSelectDropDown = document.getElementById("firstSelect");
 
-for (let key in firstSelectValues) {
-    let option = document.createElement("option");
-    option.setAttribute('value', data[key]);
+    const secondSelectDropDown = document.getElementById("secondSelect");
 
-    let optionText = document.createTextNode(key);
-    option.appendChild(optionText);
 
-    firstSelectDropDown.appendChild(option);
+    for (let key in firstSelectValues) {
+        let option = document.createElement("option");
+        option.setAttribute('value', firstSelectValues[key]);
+
+        let optionText = document.createTextNode(key);
+        option.appendChild(optionText);
+
+        firstSelectDropDown.appendChild(option);
+    }
+
+    for (let key in secondSelectValues) {
+        let option = document.createElement("option");
+        option.setAttribute('value', secondSelectValues[key]);
+
+        let optionText = document.createTextNode(key);
+        option.appendChild(optionText);
+
+        secondSelectDropDown.appendChild(option);
+    }
 }
 
-for (let key in firstSelectValues) {
-    let option = document.createElement("option");
-    option.setAttribute('value', data[key]);
+document.addEventListener("DOMContentLoaded", fillExampleSelects);
 
-    let optionText = document.createTextNode(key);
-    option.appendChild(optionText);
-
-    firstSelectDropDown.appendChild(option);
-}
-
-for (let key in secondSelectValues) {
-    let option = document.createElement("option");
-    option.setAttribute('value', data[key]);
-
-    let optionText = document.createTextNode(key);
-    option.appendChild(optionText);
-
-    secondSelectDropDown.appendChild(option);
-}
+export default fillExampleSelects;
