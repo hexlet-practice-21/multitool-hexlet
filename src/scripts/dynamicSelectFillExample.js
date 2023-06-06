@@ -1,3 +1,5 @@
+
+//наша "база данных"
 const firstSelectValues = {
     "String": "String",
     "Hello": "Hello",
@@ -12,9 +14,9 @@ const secondSelectValues = {
 
 
 const fillExampleSelects = () => {
-    const firstSelectDropDown = document.getElementById("firstSelect");
+    const firstSelectDropDown = document.getElementById("firstSelect"); //получаем первый селект
 
-    const secondSelectDropDown = document.getElementById("secondSelect");
+    const secondSelectDropDown = document.getElementById("secondSelect"); //получаем второй селект
 
 
     for (let key in firstSelectValues) {
@@ -38,6 +40,6 @@ const fillExampleSelects = () => {
     }
 }
 
-document.addEventListener("DOMContentLoaded", fillExampleSelects);
+document.addEventListener("DOMContentLoaded", fillExampleSelects); //будет срабатывать - один раз при загрузке html
 
-export default fillExampleSelects;
+export default fillExampleSelects; //экспортнем по умолчанию для тестов
