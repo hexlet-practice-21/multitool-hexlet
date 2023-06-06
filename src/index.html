@@ -18,7 +18,7 @@
                         <button class="nav-link active" id="nav-length-tab" data-bs-toggle="tab" data-bs-target="#nav-length" type="button" role="tab" aria-controls="nav-length" aria-selected="true">Length</button>
                         <button class="nav-link" id="nav-weight-tab" data-bs-toggle="tab" data-bs-target="#nav-weight" type="button" role="tab" aria-controls="nav-weight" aria-selected="false">Weight</button>
                         <button class="nav-link" id="nav-speed-tab" data-bs-toggle="tab" data-bs-target="#nav-speed" type="button" role="tab" aria-controls="nav-speed" aria-selected="false">Speed</button>
-                        <button class="nav-link" id="nav-yaml-json-tab" data-bs-toggle="tab" data-bs-target="#nav-yaml-json" type="button" role="tab" aria-controls="nav-yaml-json" aria-selected="false">Yaml-Json</button>
+                        <button class="nav-link" id="nav-data-formats-tab" data-bs-toggle="tab" data-bs-target="#nav-data-formats" type="button" role="tab" aria-controls="nav-data-formats" aria-selected="false">Data Formats</button>
                         <button class="nav-link" id="nav-currency-tab" data-bs-toggle="tab" data-bs-target="#nav-currency" type="button" role="tab" aria-controls="nav-currency" aria-selected="false">Currency</button>
                     </div>
                 </div>
@@ -32,22 +32,29 @@
                         <form action="#">
                             <div class="row g-3 gy-3">
                                 <input class="form-control" type="number" placeholder="Number" aria-label="Number">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>From</option>
+                                <select class="form-select" aria-label="Default select example" placeholder="From">
+                                    <option hidden>From</option>
                                     <option value="1">Kilometer</option>
                                     <option value="2">Meter</option>
                                     <option value="3">Centimeter</option>
                                     <option value="4">Millimeter</option>
                                 </select>
+                                <button type="button" class="btn btn-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                                    </svg>                                    
+                                    Switch
+                                </button>
                                 <select class="form-select" aria-label="Default select example">
-                                    <option selected>To</option>
+                                    <option hidden>To</option>
                                     <option value="1">Kilometer</option>
                                     <option value="2">Meter</option>
                                     <option value="3">Centimeter</option>
                                     <option value="4">Millimeter</option>
                                 </select>
                                 <button type="button" class="btn btn-primary">Сalculate</button>
-                                <input class="form-control result" type="text" value="Result" aria-label="Disabled input example" disabled readonly>
+                                <input class="form-control result" type="text" value="result" aria-label="Disabled input example" disabled readonly>
                             </div>
 
                         </form>
@@ -58,8 +65,8 @@
                     <div class="tab-pane fade" id="nav-speed" role="tabpanel" aria-labelledby="nav-speed-tab">
                         Speed
                     </div>
-                    <div class="tab-pane fade" id="nav-yaml-json" role="tabpanel" aria-labelledby="nav-yaml-json-tab">
-                        Yaml-Json
+                    <div class="tab-pane fade" id="nav-data-formats" role="tabpanel" aria-labelledby="nav-data-formats-tab">
+                        Data formats
                     </div>
                     <div class="tab-pane fade" id="nav-currency" role="tabpanel" aria-labelledby="nav-currency-tab">
                         Currency
