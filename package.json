@@ -28,7 +28,8 @@
     "@jest/globals": "^29.5.0",
     "eslint": "8.42.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "readline-sync": "^1.4.10"
   },
   "jest": {
     "collectCoverageFrom": [
