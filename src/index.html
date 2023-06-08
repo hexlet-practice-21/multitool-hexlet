@@ -31,7 +31,8 @@
                         <h3 class="text-center text-secondary">Сonverting different types of Length</h2>
                         <form action="#">
                             <div class="row g-3 gy-3">
-                                <input class="form-control" id="number" type="number" placeholder="Number" aria-label="text" required>
+                                <input class="form-control" id="number" placeholder="Number" aria-label="text" required pattern="^[0-9]+$">
+                                <div class="invalid-feedback" id="number-validator">Please use only numbers</div>
                                 <label class="form-label">Convert From</label>
                                 <select class="form-select" name="select" id="firstSelect">
                                 </select>
@@ -45,7 +46,7 @@
                                 <label class="form-label">Convert To</label>
                                 <select class="form-select" name="select" id="secondSelect">
                                 </select>
-                                <button type="button" id="resultBut" class="btn btn-primary">Сalculate</button>
+                                <button type="button" id="resultBut" class="btn btn-primary">Сalculate & Copy</button>
                                 <input class="form-control result" id ="result" type="text" disabled readonly>
                             </div>
 
