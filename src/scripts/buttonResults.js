@@ -1,4 +1,4 @@
-const concat = () => {
+const buttonResult = () => {
     const firstSelectResult = document.getElementById("firstSelect"); //достаем значение из первого селекта
 
     const secondSelectResult = document.getElementById("secondSelect"); //достаем значение из второго селекта
@@ -8,4 +8,4 @@ const concat = () => {
     document.getElementById('result').setAttribute("value", firstAndsecondSelect)
 }
 
-export default concat;
+export default buttonResult;
