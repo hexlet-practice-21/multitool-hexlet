@@ -38,3 +38,9 @@ test('should convert knots to all units', () => {
     kilometers: 37.04,
   });
 });
+test('should convert null for unsupported unit', () => {
+  const value = 20;
+  const speed = 'swings';
+  const result = speedConversion(value, speed);
+  expect(result).toBeNull();
+});
