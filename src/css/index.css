@@ -43,5 +43,15 @@ h3 {
     margin: 20px;
 }
 
+.form-select {
+    margin-top: 5px;
+}
+
+.form-label {
+    color:#636363;
+    margin-bottom: 0;
+    padding-left: 3px;
+}
+
 
 
