@@ -1,8 +1,10 @@
-const buttonSwitch = () => {
-  const firstSelectResult = document.getElementById('firstSelect').value; // достаем значение из первого селекта
-  const secondSelectResult = document.getElementById('secondSelect').value; // достаем значение из второго селекта
-  document.getElementById('firstSelect').value = secondSelectResult;
-  document.getElementById('secondSelect').value = firstSelectResult;
+export const lengthButtonSwitch = () => {
+  const firstSelectResult = document.getElementById('length-first-select').value; // достаем значение из первого селекта
+  const secondSelectResult = document.getElementById('length-second-select').value; // достаем значение из второго селекта
+  document.getElementById('length-first-select').value = secondSelectResult; // Меняем местами
+  document.getElementById('length-second-select').value = firstSelectResult; // Меняем местами
 };
 
-export default buttonSwitch;
+export const weigthButtonSwitch = () => {
+
+};

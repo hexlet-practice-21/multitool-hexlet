@@ -1,25 +1,24 @@
-// наша "база данных"
-const firstSelectValues = {
-  Kilometer: 'Kilometer',
-  Meter: 'Meter',
-  Centimeter: 'Centimeter',
-  Millimeter: 'Millimeter',
-};
+export const lengthFillSelects = () => {
+  const lengthFirstSelectValues = { // Единицы первого выпадающего списка
+    Kilometer: 'Kilometer',
+    Meter: 'Meter',
+    Centimeter: 'Centimeter',
+    Millimeter: 'Millimeter',
+  };
 
-const secondSelectValues = {
-  Kilometer: 'Kilometer',
-  Meter: 'Meter',
-  Centimeter: 'Centimeter',
-  Millimeter: 'Millimeter',
-};
+  const lengthSecondSelectValues = { // Единицы второго выпадающего списка
+    Kilometer: 'Kilometer',
+    Meter: 'Meter',
+    Centimeter: 'Centimeter',
+    Millimeter: 'Millimeter',
+  };
 
-const fillExampleSelects = () => {
-  const firstSelectDropDown = document.getElementById('firstSelect'); // получаем первый селект
+  const firstSelectDropDown = document.getElementById('length-first-select'); // Получаем первый выпадающий список
+  const secondSelectDropDown = document.getElementById('length-second-select'); // Получаем второй выпадающий список
 
-  const secondSelectDropDown = document.getElementById('secondSelect'); // получаем второй селект
-  Object.keys(firstSelectValues).forEach((key) => {
+  Object.keys(lengthFirstSelectValues).forEach((key) => { // заполняем 1
     const option = document.createElement('option');
-    option.setAttribute('value', firstSelectValues[key]);
+    option.setAttribute('value', lengthFirstSelectValues[key]);
 
     const optionText = document.createTextNode(key);
     option.appendChild(optionText);
@@ -27,9 +26,9 @@ const fillExampleSelects = () => {
     firstSelectDropDown.appendChild(option);
   });
 
-  Object.keys(secondSelectValues).forEach((key) => {
+  Object.keys(lengthSecondSelectValues).forEach((key) => { // заполняем 2
     const option = document.createElement('option');
-    option.setAttribute('value', secondSelectValues[key]);
+    option.setAttribute('value', lengthSecondSelectValues[key]);
 
     const optionText = document.createTextNode(key);
     option.appendChild(optionText);
@@ -38,4 +37,6 @@ const fillExampleSelects = () => {
   });
 };
 
-export default fillExampleSelects; // экспортнем по умолчанию для тестов
+export const weigthFillSelects = () => {
+
+};
