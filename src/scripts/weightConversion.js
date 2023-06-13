@@ -1,6 +1,6 @@
 const weightConversion = (value, weight) => {
   const weights = {
-    kilogram: {
+    kil: {
       kilograms: (values) => values,
       gram: (values) => (+(values * 1000).toFixed(7)),
       ton: (values) => (+(values / 1000).toFixed(7)),

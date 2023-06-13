@@ -10,8 +10,8 @@ test('stub', () => {
 
 test('should convert kilogram to all units', () => {
   const value = 10;
-  const speed = 'kilogram';
-  const result = weightConversion(value, speed);
+  const weight = 'kil';
+  const result = weightConversion(value, weight);
   expect(result).toEqual({
     kilograms: 10,
     gram: 10000,
@@ -23,8 +23,8 @@ test('should convert kilogram to all units', () => {
 
 test('should convert gram to all units', () => {
   const value = 15;
-  const speed = 'gram';
-  const result = weightConversion(value, speed);
+  const weight = 'gram';
+  const result = weightConversion(value, weight);
   expect(result).toEqual({
     kilograms: 0.015,
     gram: 15,
@@ -36,8 +36,8 @@ test('should convert gram to all units', () => {
 
 test('should convert ton to all units', () => {
   const value = 10;
-  const speed = 'ton';
-  const result = weightConversion(value, speed);
+  const weight = 'ton';
+  const result = weightConversion(value, weight);
   expect(result).toEqual({
     kilograms: 10000,
     gram: 10000000,
@@ -49,8 +49,8 @@ test('should convert ton to all units', () => {
 
 test('should convert pound to all units', () => {
   const value = 15;
-  const speed = 'pound';
-  const result = weightConversion(value, speed);
+  const weight = 'pound';
+  const result = weightConversion(value, weight);
   expect(result).toEqual({
     kilograms: 6.8027211,
     gram: 6803.88,
@@ -62,8 +62,8 @@ test('should convert pound to all units', () => {
 
 test('should convert ounce to all units', () => {
   const value = 10;
-  const speed = 'ounce';
-  const result = weightConversion(value, speed);
+  const weight = 'ounce';
+  const result = weightConversion(value, weight);
   expect(result).toEqual({
     kilograms: 0.2834949,
     gram: 283.495,
@@ -75,7 +75,7 @@ test('should convert ounce to all units', () => {
 
 test('should convert null for unsupported unit', () => {
   const value = 100;
-  const speed = 'swings';
-  const result = weightConversion(value, speed);
+  const weight = 'swings';
+  const result = weightConversion(value, weight);
   expect(result).toBeNull();
 });
