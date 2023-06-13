@@ -1,16 +1,11 @@
 // @ts-check
 
 import { expect, test } from '@jest/globals';
-import returnTrue from '../src/scripts/empty.js';
 import weightConversion from '../src/scripts/weightConversion.js';
-
-test('stub', () => {
-  expect(returnTrue()).toBe(true);
-});
 
 test('should convert kilogram to all units', () => {
   const value = 10;
-  const weight = 'kilogram';
+  const weight = 'kilograms';
   const result = weightConversion(value, weight);
   expect(result).toEqual({
     kilograms: 10,
