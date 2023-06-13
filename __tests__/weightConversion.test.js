@@ -10,7 +10,7 @@ test('stub', () => {
 
 test('should convert kilogram to all units', () => {
   const value = 10;
-  const speed = 'kilogram';
+  const speed = 'kil';
   const result = weightConversion(value, speed);
   expect(result).toEqual({
     kilograms: 10,
@@ -74,7 +74,7 @@ test('should convert ounce to all units', () => {
 });
 
 test('should convert null for unsupported unit', () => {
-  const value = 10;
+  const value = 100;
   const speed = 'swings';
   const result = weightConversion(value, speed);
   expect(result).toBeNull();
