@@ -10,7 +10,7 @@ test('stub', () => {
 
 test('should convert kilogram to all units', () => {
   const value = 10;
-  const speed = 'kil';
+  const speed = 'kilogram';
   const result = weightConversion(value, speed);
   expect(result).toEqual({
     kilograms: 10,
