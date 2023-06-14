@@ -27,7 +27,7 @@ export const speedButtonResult = () => {
 
   const numberForConvert = document.getElementById('speed-number').value; // достает значение из формы ввода
   if (isNumeric(numberForConvert)) { // Проверяет валидацию
-    const result = speedConversion(numberForConvert, firstSelectResult)[secondSelectResult]; // ТУТ БУДЕТ ФУНКЦИЯ КОТОРАЯ СЧИТАЕТ ВСЕ
+    const result = speedConversion(numberForConvert, firstSelectResult)[secondSelectResult]; 
 
     document.getElementById('speed-result-output').setAttribute('value', result); // пишет результат в поле
     navigator.clipboard.writeText(result); // копирует результат в буфер обмена
