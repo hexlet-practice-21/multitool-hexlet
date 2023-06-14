@@ -1,10 +1,76 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <title>Hello World</title>
-</head>
-<body>
-<h1>Hello, World! 12</h1>
-</body>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Multitool</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/index.css">
+
+    </head>
+    <body id="body">
+        <header>
+            <div class="header-gradient">
+                <h1>MULTITOOL</h1>
+            </div>
+            <nav>
+                <div class="container">
+                    <div class="nav nav-tabs nav-fill justify-content-center" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-length-tab" data-bs-toggle="tab" data-bs-target="#nav-length" type="button" role="tab" aria-controls="nav-length" aria-selected="true">Length</button>
+                        <button class="nav-link" id="nav-weight-tab" data-bs-toggle="tab" data-bs-target="#nav-weight" type="button" role="tab" aria-controls="nav-weight" aria-selected="false">Weight</button>
+                        <button class="nav-link" id="nav-speed-tab" data-bs-toggle="tab" data-bs-target="#nav-speed" type="button" role="tab" aria-controls="nav-speed" aria-selected="false">Speed</button>
+                        <button class="nav-link" id="nav-data-formats-tab" data-bs-toggle="tab" data-bs-target="#nav-data-formats" type="button" role="tab" aria-controls="nav-data-formats" aria-selected="false">Data Formats</button>
+                        <button class="nav-link" id="nav-currency-tab" data-bs-toggle="tab" data-bs-target="#nav-currency" type="button" role="tab" aria-controls="nav-currency" aria-selected="false">Currency</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container">
+                <div class="tab-content main-border d-flex justify-content-center" id="nav-tabContent">
+                    <div class="tab-pane fade show active w-50 p-3" id="nav-length" role="tabpanel" aria-labelledby="nav-length-tab">
+                        <h3 class="text-center text-secondary">Сonverting different types of Length</h3>
+                        <form action="#">
+                            <div class="row g-3 gy-3">
+                                <input class="form-control" id="length-number" placeholder="Number" aria-label="text" required pattern="^[0-9]+$">
+                                <div class="invalid-feedback" id="length-number-validator">Please use only numbers</div>
+                                <label class="form-label">Convert From</label>
+                                <select class="form-select" name="select" id="length-first-select">
+                                </select>
+                                <button type="button" class="btn btn-primary" id="length-switch-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                                    </svg>                                    
+                                    Switch
+                                </button>
+                                <label class="form-label">Convert To</label>
+                                <select class="form-select" name="select" id="length-second-select">
+                                </select>
+                                <button type="button" id="length-result-button" class="btn btn-primary">Сalculate & Copy</button>
+                                <input class="form-control result" id ="length-result-output" type="text" disabled readonly>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="nav-weight" role="tabpanel" aria-labelledby="nav-weight-tab">
+                        Weight
+                    </div>
+                    <div class="tab-pane fade" id="nav-speed" role="tabpanel" aria-labelledby="nav-speed-tab">
+                        Speed
+                    </div>
+                    <div class="tab-pane fade" id="nav-data-formats" role="tabpanel" aria-labelledby="nav-data-formats-tab">
+                        Data formats
+                    </div>
+                    <div class="tab-pane fade" id="nav-currency" role="tabpanel" aria-labelledby="nav-currency-tab"> 
+                        Currency
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+
+        <script type="module" src="scripts/init.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
 </html>
