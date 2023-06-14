@@ -5,24 +5,24 @@ import speedConversion from '../src/scripts/conversion/speedConversion.js';
 
 
 test('should convert kilometers to all units', () => {
-    expect(speedConversion(10, 'km')).toEqual({
-        kilometers: 10,
-        miles: 6.21371,
-        knots: 5.39957,
+    expect(speedConversion(10, 'Kilometers')).toEqual({
+        Kilometers: 10,
+        Miles: 6.21371,
+        Knots: 5.39957,
     });
 });
 test('should convert miles to all units', () => {
     expect(speedConversion(15, 'mil')).toEqual({
-        miles: 15,
-        kilometers: 24.14016,
-        knots: 13.03465,
+        Miles: 15,
+        Kilometers: 24.14016,
+        Knots: 13.03465,
     });
 });
 test('should convert knots to all units', () => {
     expect(speedConversion(20, 'knots')).toEqual({
-        knots: 20,
-        miles: 23.01558,
-        kilometers: 37.04,
+        Knots: 20,
+        Miles: 23.01558,
+        Kilometers: 37.04,
     });
 });
 test('should convert null for unsupported unit', () => {
