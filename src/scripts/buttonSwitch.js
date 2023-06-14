@@ -12,6 +12,3 @@ export const speedButtonSwitch = () => {
   document.getElementById('speed-second-select').value = firstSelectResult; // Меняем местами
 };
 
-
-
-

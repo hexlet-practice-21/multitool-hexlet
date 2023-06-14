@@ -74,6 +74,3 @@ export const speedFillSelects = () => {
     secondSelectDropDown.appendChild(option);
   });
 };
-
-
-

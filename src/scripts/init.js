@@ -19,5 +19,3 @@ speedResultButton.addEventListener('click', speedButtonResult); // добавл�
 const speedSwitchButton = document.getElementById('speed-switch-button'); // получим кнопку по айдишнику
 speedSwitchButton.addEventListener('click', speedButtonSwitch); // добавлям слушателя к нашей кнопке, при нажатие - будем вызвыать buttonSwitch
 
-
-
