@@ -1,19 +1,19 @@
 const speedConversion = (value, speed) => {
     const speeds = {
-        km: {
-            kilometers: (values) => values,
-            miles: (values) => (+(values / 1.609344).toFixed(5)),
-            knots: (values) => (+(values / 1.852).toFixed(5)),
+        Kilometers: {
+            Kilometers: (values) => values,
+            Miles: (values) => (+(values / 1.609344).toFixed(5)),
+            Knots: (values) => (+(values / 1.852).toFixed(5)),
         },
-        mil: {
-            miles: (values) => values,
-            kilometers: (values) => (+(values * 1.609344).toFixed(5)),
-            knots: (values) => (+(values / 1.150779).toFixed(5)),
+        Miles: {
+            Miles: (values) => values,
+            Kilometers: (values) => (+(values * 1.609344).toFixed(5)),
+            Knots: (values) => (+(values / 1.150779).toFixed(5)),
         },
-        knots: {
-            knots: (values) => values,
-            miles: (values) => (+(values * 1.150779).toFixed(5)),
-            kilometers: (values) => (+(values * 1.852).toFixed(5)),
+        Knots: {
+            Knots: (values) => values,
+            Miles: (values) => (+(values * 1.150779).toFixed(5)),
+            Kilometers: (values) => (+(values * 1.852).toFixed(5)),
         },
     };
     if (speed in speeds) {

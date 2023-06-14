@@ -5,6 +5,13 @@ export const lengthButtonSwitch = () => {
   document.getElementById('length-second-select').value = firstSelectResult; // Меняем местами
 };
 
-export const weigthButtonSwitch = () => {
-
+export const speedButtonSwitch = () => {
+  const firstSelectResult = document.getElementById('speed-first-select').value; // достаем значение из первого селекта
+  const secondSelectResult = document.getElementById('speed-second-select').value; // достаем значение из второго селекта
+  document.getElementById('speed-first-select').value = secondSelectResult; // Меняем местами
+  document.getElementById('speed-second-select').value = firstSelectResult; // Меняем местами
 };
+
+
+
+

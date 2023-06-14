@@ -37,6 +37,43 @@ export const lengthFillSelects = () => {
   });
 };
 
-export const weigthFillSelects = () => {
 
+export const speedFillSelects = () => {
+  const lengthFirstSelectValues = { // Единицы первого выпадающего списка
+    Kilometers: 'Kilometers',
+    Miles: 'Miles',
+    Knots: 'Knots',
+  };
+
+  const lengthSecondSelectValues = { // Единицы второго выпадающего списка
+    Kilometers: 'Kilometers',
+    Miles: 'Miles',
+    Knots: 'Knots',
+  };
+
+  const firstSelectDropDown = document.getElementById('speed-first-select'); // Получаем первый выпадающий список
+  const secondSelectDropDown = document.getElementById('speed-second-select'); // Получаем второй выпадающий список
+
+  Object.keys(lengthFirstSelectValues).forEach((key) => { // заполняем 1
+    const option = document.createElement('option');
+    option.setAttribute('value', lengthFirstSelectValues[key]);
+
+    const optionText = document.createTextNode(key);
+    option.appendChild(optionText);
+
+    firstSelectDropDown.appendChild(option);
+  });
+
+  Object.keys(lengthSecondSelectValues).forEach((key) => { // заполняем 2
+    const option = document.createElement('option');
+    option.setAttribute('value', lengthSecondSelectValues[key]);
+
+    const optionText = document.createTextNode(key);
+    option.appendChild(optionText);
+
+    secondSelectDropDown.appendChild(option);
+  });
 };
+
+
+
