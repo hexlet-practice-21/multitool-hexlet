@@ -10,6 +10,7 @@ lengthResultButton.addEventListener('click', lengthButtonResult); // добав�
 const lengthSwitchButton = document.getElementById('length-switch-button'); // получим кнопку по айдишнику
 lengthSwitchButton.addEventListener('click', lengthButtonSwitch); // добавлям слушателя к нашей кнопке, при нажатие - будем вызвыать buttonSwitch
 
+
 document.addEventListener('DOMContentLoaded', weigthFillSelects);// Заполнение выпадающих списков длины (один раз при загрузке сайта)
 
 const speedResultButton = document.getElementById('weigth-result-button'); // получим кнопку по айдишнику

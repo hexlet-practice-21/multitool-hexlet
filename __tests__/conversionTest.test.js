@@ -49,5 +49,5 @@ test('should convert ounce to all units', () => {
   });
 });
 test('should convert null for unsupported unit', () => {
-  expect(speedConversion(20, 'swings')).toBeNull();
+  expect(speedConversion(10, 'swings')).toBeNull();
 });

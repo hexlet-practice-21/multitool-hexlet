@@ -14,7 +14,7 @@ export const lengthButtonResult = () => {
 
     document.getElementById('length-result-output').setAttribute('value', result); // пишет результат в поле
     navigator.clipboard.writeText(result); // копирует результат в буфер обмена
-  } else {
+  } else { //если валидация не прошла
     document.getElementById('length-number-validator').setAttribute('style', 'opacity: 1'); // Показывает ошибку валидации
   }
 };
@@ -31,7 +31,7 @@ export const weigthButtonResult = () => {
 
     document.getElementById('weigth-result-output').setAttribute('value', result); // пишет результат в поле
     navigator.clipboard.writeText(result); // копирует результат в буфер обмена
-  } else {
+  } else { //если валидация не прошла
     document.getElementById('weigth-number-validator').setAttribute('style', 'opacity: 1'); // Показывает ошибку валидации
   }
 };

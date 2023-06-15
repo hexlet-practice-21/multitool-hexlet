@@ -45,5 +45,4 @@ const weightConversion = (value, weight) => {
   }
   return null;
 };
-
 export default weightConversion;

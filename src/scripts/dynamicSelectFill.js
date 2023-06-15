@@ -63,7 +63,6 @@ export const weigthFillSelects = () => {
 
     const optionText = document.createTextNode(key);
     option.appendChild(optionText);
-
     firstSelectDropDown.appendChild(option);
   });
 
