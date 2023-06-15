@@ -13,8 +13,8 @@ lengthSwitchButton.addEventListener('click', lengthButtonSwitch); // добав�
 
 document.addEventListener('DOMContentLoaded', weigthFillSelects);// Заполнение выпадающих списков длины (один раз при загрузке сайта)
 
-const speedResultButton = document.getElementById('weigth-result-button'); // получим кнопку по айдишнику
-speedResultButton.addEventListener('click', weigthButtonResult); // добавлям слушателя к нашей кнопке, при нажатие - будем вызвыать buttonResult
+const weigtResultButton = document.getElementById('weigth-result-button'); // получим кнопку по айдишнику
+weigtResultButton.addEventListener('click', weigthButtonResult); // добавлям слушателя к нашей кнопке, при нажатие - будем вызвыать buttonResult
 
-const speedSwitchButton = document.getElementById('weigth-switch-button'); // получим кнопку по айдишнику
-speedSwitchButton.addEventListener('click', weigthButtonSwitch); // добавлям слушателя к нашей кнопке, при нажатие - будем вызвыать buttonSwitch
+const weigtSwitchButton = document.getElementById('weigth-switch-button'); // получим кнопку по айдишнику
+weigtSwitchButton.addEventListener('click', weigthButtonSwitch); // добавлям слушателя к нашей кнопке, при нажатие - будем вызвыать buttonSwitch
