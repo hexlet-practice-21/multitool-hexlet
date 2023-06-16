@@ -39,7 +39,7 @@ export const lengthFillSelects = () => {
 
 export const weigthFillSelects = () => {
   const lengthFirstSelectValues = { // Единицы первого выпадающего списка
-    Kilograms: 'Kilogram',
+    Kilograms: 'Kilograms',
     Gram: 'Gram',
     Ton: 'Ton',
     Pound: 'Pound',
@@ -47,7 +47,7 @@ export const weigthFillSelects = () => {
   };
 
   const lengthSecondSelectValues = { // Единицы второго выпадающего списка
-    Kilograms: 'Kilogram',
+    Kilograms: 'Kilograms',
     Gram: 'Gram',
     Ton: 'Ton',
     Pound: 'Pound',
