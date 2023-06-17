@@ -11,4 +11,4 @@ const createConverter = (conversionFunction) => (data) => {
 const jsonToYamlConverter = createConverter(yaml.dump);
 const yamlToJsonConverter = createConverter(yaml.load);
 
-export default { jsonToYamlConverter, yamlToJsonConverter };
+export default { jsonToYamlConverter, yamlToJsonConverter, createConverter };

@@ -2,8 +2,9 @@
 
 import { expect, test } from '@jest/globals';
 import returnTrue from '../src/scripts/empty.js';
-import convertToMetricLength from '../src/convertlength.js';
-
+import convertToMetricLength from '../src/scripts/convertlength.js';
+import yaml from 'js-yaml';
+import convertYamlJson from '../src/scripts/convertYamlJson.js';
 
 test('stub', () => {
   expect(returnTrue()).toBe(true);
@@ -62,4 +63,45 @@ test('should return null for unsupported unit', () => {
   const unit = 'glty';
   const result = convertToMetricLength(value, unit);
   expect(result).toBeNull();
+});
+
+const { jsonToYamlConverter, yamlToJsonConverter } = convertYamlJson;
+
+
+
+
+describe('JSON to YAML Converter', () => {
+  test('should convert JSON object to YAML', () => {
+    const json = {
+      name: 'John Doe',
+      age: 30,
+    };
+    const expectedYaml = 'name: John Doe\nage: 30\n';
+    const convertedYaml = jsonToYamlConverter(json);
+    expect(convertedYaml).toEqual(expectedYaml);
+  });
+
+  test('should return null for invalid JSON', () => {
+    const invalidJson = '{ name: John Doe, age: 30 }';
+    const convertedYaml = jsonToYamlConverter(invalidJson);
+    expect(convertedYaml).toBeNull();
+  });
+});
+
+describe('YAML to JSON Converter', () => {
+  test('should convert YAML to JSON object', () => {
+    const yamlData = 'name: John Doe\nage: 30\n';
+    const expectedJson = {
+      name: 'John Doe',
+      age: 30,
+    };
+    const convertedJson = yamlToJsonConverter(yamlData);
+    expect(convertedJson).toEqual(expectedJson);
+  });
+
+  test('should return null for invalid YAML', () => {
+    const invalidYaml = 'name: John Doe, age: 30';
+    const convertedJson = yamlToJsonConverter(invalidYaml);
+    expect(convertedJson).toBeNull();
+  });
 });
