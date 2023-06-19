@@ -2,7 +2,8 @@ plugins:
   - jest
 
 env:
-  es2021: true,
+  browser: true
+  es2021: true
   node: true
 
 extends:
@@ -22,4 +23,3 @@ rules:
     # - ignorePackages
     - js: always
   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
-
