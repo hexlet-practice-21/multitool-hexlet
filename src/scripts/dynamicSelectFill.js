@@ -40,3 +40,34 @@ export const lengthFillSelects = () => {
 export const weigthFillSelects = () => {
 
 };
+
+export const dataFormatsFillSelects = () => {
+  const dataFormatsFirstSelectValues = {
+    Yaml: 'Yaml',
+    Json: 'Json',
+  };
+
+  const dataFormatsSecondSelectValues = {
+    Yaml: 'Yaml',
+    Json: 'Json',
+  };
+
+  const firstSelectDropDown = document.getElementById('data-formats-first-select');
+  const secondSelectDropDown = document.getElementById('data-formats-second-select');
+
+  Object.keys(dataFormatsFirstSelectValues).forEach((key) => {
+    const option = document.createElement('option');
+    option.setAttribute('value', dataFormatsFirstSelectValues[key]);
+    const optionText = document.createTextNode(key);
+    option.appendChild(optionText);
+    firstSelectDropDown.appendChild(option);
+  });
+
+  Object.keys(dataFormatsSecondSelectValues).forEach((key) => {
+    const option = document.createElement('option');
+    option.setAttribute('value', dataFormatsSecondSelectValues[key]);
+    const optionText = document.createTextNode(key);
+    option.appendChild(optionText);
+    secondSelectDropDown.appendChild(option);
+  });
+};

@@ -1,14 +1,9 @@
 // @ts-check
 
 import { expect, test } from '@jest/globals';
-import returnTrue from '../src/scripts/empty.js';
 import convertToMetricLength from '../src/scripts/convertlength.js';
 import yaml from 'js-yaml';
-import convertYamlJson from '../src/scripts/convertYamlJson.js';
-
-test('stub', () => {
-  expect(returnTrue()).toBe(true);
-});
+import dataFormats from '../src/scripts/convertDataFormats.js';
 
 test('should convert kilometers to all units', () => {
   const value = 3;
@@ -65,7 +60,7 @@ test('should return null for unsupported unit', () => {
   expect(result).toBeNull();
 });
 
-const { jsonToYamlConverter, yamlToJsonConverter } = convertYamlJson;
+const { jsonToYamlConverter, yamlToJsonConverter } = dataFormats;
 
 
 

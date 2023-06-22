@@ -20,3 +20,17 @@ export const lengthButtonResult = () => {
 export const weighthButtonResult = () => {
 
 };
+
+export const dataFormatsButtonResult = () => {
+  document.getElementById('data-formats-number-validator').setAttribute('style', 'opacity: 0');
+  const firstSelectResult = document.getElementById('data-formats-first-select').value;
+  const secondSelectResult = document.getElementById('data-formats-second-select').value;
+  const numberForConvert = document.getElementById('data-formats-number').value;
+  if (isNumeric(numberForConvert)) {
+    const result = `тест ${firstSelectResult} ${secondSelectResult}`;
+    document.getElementById('data-formats-result-output').setAttribute('value', result);
+    navigator.clipboard.writeText(result);
+  } else {
+    document.getElementById('data-formats-number-validator').setAttribute('style', 'opacity: 1');
+  }
+};
