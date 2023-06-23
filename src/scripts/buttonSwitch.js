@@ -1,14 +1,11 @@
-export const lengthButtonSwitch = () => {
-  const firstSelectResult = document.getElementById('length-first-select').value; // достаем значение из первого селекта
-  const secondSelectResult = document.getElementById('length-second-select').value; // достаем значение из второго селекта
-  document.getElementById('length-first-select').value = secondSelectResult; // Меняем местами
-  document.getElementById('length-second-select').value = firstSelectResult; // Меняем местами
+const buttonSwitch = (id1, id2) => {
+  const firstSelectResult = document.getElementById(id1).value;
+  const secondSelectResult = document.getElementById(id2).value;
+  document.getElementById(id1).value = secondSelectResult;
+  document.getElementById(id2).value = firstSelectResult;
 };
 
-export const speedButtonSwitch = () => {
-  const firstSelectResult = document.getElementById('speed-first-select').value; // достаем значение из первого селекта
-  const secondSelectResult = document.getElementById('speed-second-select').value; // достаем значение из второго селекта
-  document.getElementById('speed-first-select').value = secondSelectResult; // Меняем местами
-  document.getElementById('speed-second-select').value = firstSelectResult; // Меняем местами
-};
+const lengthButtonSwitch = () => buttonSwitch('length-first-select', 'length-second-select');
+const speedButtonSwitch = () => buttonSwitch('speed-first-select', 'speed-second-select');
 
+export { buttonSwitch, lengthButtonSwitch, speedButtonSwitch };
