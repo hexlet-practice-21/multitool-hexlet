@@ -24,6 +24,13 @@ const lengthFillSelects = () => {
   fillSelect(speedOptionsTwo);
 };
 
+const weigthFillSelects = () => {
+  const speedOptionsOne = createSelectOptions('weigth-first-select', ['Kilograms', 'Gram', 'Ton', 'Pound', 'Ounce']);
+  const speedOptionsTwo = createSelectOptions('weigth-second-select', ['Kilograms', 'Gram', 'Ton', 'Pound', 'Ounce']);
+  fillSelect(speedOptionsOne);
+  fillSelect(speedOptionsTwo);
+};
+
 const speedFillSelects = () => {
   const speedOptionsOne = createSelectOptions('speed-first-select', ['Kilometers', 'Miles', 'Knots']);
   const speedOptionsTwo = createSelectOptions('speed-second-select', ['Kilometers', 'Miles', 'Knots']);
@@ -32,5 +39,5 @@ const speedFillSelects = () => {
 };
 
 export {
-  createSelectOptions, fillSelect, lengthFillSelects, speedFillSelects,
+  createSelectOptions, fillSelect, lengthFillSelects, speedFillSelects, weigthFillSelects,
 };

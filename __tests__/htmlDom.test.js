@@ -1,9 +1,9 @@
 /** @jest-environment jsdom */
 import { expect, test } from '@jest/globals';
 
-import { createSelectOptions, fillSelect, speedFillSelects } from '../src/scripts/dynamicSelectFill.js';
-import { buttonResult, isNumeric, speedButtonResult } from '../src/scripts/buttonResults.js';
-import { buttonSwitch, speedButtonSwitch } from '../src/scripts/buttonSwitch.js';
+import { speedFillSelects } from '../src/scripts/dynamicSelectFill.js';
+import { isNumeric, speedButtonResult } from '../src/scripts/buttonResults.js';
+import { speedButtonSwitch } from '../src/scripts/buttonSwitch.js';
 
 test('Numeric validation function', () => {
   expect(isNumeric('123')).toBeTruthy();

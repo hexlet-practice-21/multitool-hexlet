@@ -1,5 +1,6 @@
 import speedConversion from './conversion/speedConversion.js';
 import lengthConversion from './conversion/lengthConversion.js';
+import weigthConversion from './conversion/weigthConversion.js';
 
 const isNumeric = (string) => {
   const isEmpty = string !== '';
@@ -29,8 +30,9 @@ const buttonResult = (input, validator, firstSelect, secondSelect, output, conve
 };
 
 const lengthButtonResult = () => buttonResult('length-number', 'length-number-validator', 'length-first-select', 'length-second-select', 'length-result-output', lengthConversion);
+const weigthButtonResult = () => buttonResult('weigth-number', 'weigth-number-validator', 'weigth-first-select', 'weigth-second-select', 'weigth-result-output', weigthConversion);
 const speedButtonResult = () => buttonResult('speed-number', 'speed-number-validator', 'speed-first-select', 'speed-second-select', 'speed-result-output', speedConversion);
 
 export {
-  lengthButtonResult, speedButtonResult, buttonResult, isNumeric,
+  lengthButtonResult, speedButtonResult, buttonResult, isNumeric, weigthButtonResult,
 };
