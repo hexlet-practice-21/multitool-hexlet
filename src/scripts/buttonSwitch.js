@@ -8,3 +8,10 @@ export const lengthButtonSwitch = () => {
 export const weigthButtonSwitch = () => {
 
 };
+
+export const dataFormatsButtonSwitch = () => {
+  const firstSelectResult = document.getElementById('data-formats-first-select').value;
+  const secondSelectResult = document.getElementById('data-formats-second-select').value;
+  document.getElementById('data-formats-first-select').value = secondSelectResult;
+  document.getElementById('data-formats-second-select').value = firstSelectResult;
+};
