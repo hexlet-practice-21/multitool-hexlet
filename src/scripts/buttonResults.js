@@ -1,22 +1,38 @@
-const isNumeric = (string) => [...string].every((c) => '0123456789'.includes(c)) && string !== ''; // функция чекает чтобы были только цифры и не пустая строка. (валидация)
+import speedConversion from './conversion/speedConversion.js';
+import lengthConversion from './conversion/lengthConversion.js';
+import weigthConversion from './conversion/weigthConversion.js';
 
-export const lengthButtonResult = () => {
-  document.getElementById('length-number-validator').setAttribute('style', 'opacity: 0'); // Скрывает надпись о нарушении валидации при каждом вводе
-  const firstSelectResult = document.getElementById('length-first-select').value; // достаем значение из первого селекта
+const isNumeric = (string) => {
+  const isEmpty = string !== '';
+  if (string.includes('.')) {
+    const isFruction = [...string].every((c) => '.0123456789'.includes(c));
+    const isOneDot = string.substr(2).includes('.') === false;
+    const isCorrectFraction = string.startsWith('0.') && string.length >= 3;
+    return isOneDot && isCorrectFraction && isFruction && isEmpty;
+  }
+  const isNumber = [...string].every((c) => '0123456789'.includes(c));
+  const isFirsZero = string[0] !== '0';
+  return isNumber && isEmpty && isFirsZero;
+};
 
-  const secondSelectResult = document.getElementById('length-second-select').value; // достаем значение из второго селекта
-
-  const numberForConvert = document.getElementById('length-number').value; // достает значение из формы ввода
-  if (isNumeric(numberForConvert)) { // Проверяет валидацию
-    const result = `тест ${firstSelectResult} ${secondSelectResult}`; // ТУТ БУДЕТ ФУНКЦИЯ КОТОРАЯ СЧИТАЕТ ВСЕ
-
-    document.getElementById('length-result-output').setAttribute('value', result); // пишет результат в поле
-    navigator.clipboard.writeText(result); // копирует результат в буфер обмена
-  } else { //если валидация не прошла
-    document.getElementById('length-number-validator').setAttribute('style', 'opacity: 1'); // Показывает ошибку валидации
+const buttonResult = (input, validator, firstSelect, secondSelect, output, convertFunction) => {
+  document.getElementById(validator).setAttribute('style', 'opacity: 0'); // сбрасывает ошибку
+  const firstSelectResult = document.getElementById(firstSelect).value;
+  const secondSelectResult = document.getElementById(secondSelect).value;
+  const numberForConvert = document.getElementById(input).value;
+  if (isNumeric(numberForConvert)) { // проверяет валидацию
+    const result = convertFunction(numberForConvert, firstSelectResult)[secondSelectResult];
+    document.getElementById(output).setAttribute('value', result); // выводит результат
+    navigator.clipboard.writeText(result); // копирует в буфер обмена
+  } else { // если валидация не прошла
+    document.getElementById(validator).setAttribute('style', 'opacity: 1'); // Показывает ошибку
   }
 };
 
-export const weighthButtonResult = () => {
+const lengthButtonResult = () => buttonResult('length-number', 'length-number-validator', 'length-first-select', 'length-second-select', 'length-result-output', lengthConversion);
+const weigthButtonResult = () => buttonResult('weigth-number', 'weigth-number-validator', 'weigth-first-select', 'weigth-second-select', 'weigth-result-output', weigthConversion);
+const speedButtonResult = () => buttonResult('speed-number', 'speed-number-validator', 'speed-first-select', 'speed-second-select', 'speed-result-output', speedConversion);
 
+export {
+  lengthButtonResult, speedButtonResult, buttonResult, isNumeric, weigthButtonResult,
 };

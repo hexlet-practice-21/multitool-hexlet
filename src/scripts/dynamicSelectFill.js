@@ -1,42 +1,43 @@
-export const lengthFillSelects = () => {
-  const lengthFirstSelectValues = { // Единицы первого выпадающего списка
-    Kilometer: 'Kilometer',
-    Meter: 'Meter',
-    Centimeter: 'Centimeter',
-    Millimeter: 'Millimeter',
-  };
+const createSelectOptions = (selectId, optionsArr) => {
+  const result = { selectId, options: {} };
+  optionsArr.forEach((option) => { result.options[option] = option; });
+  return result;
+};
 
-  const lengthSecondSelectValues = { // Единицы второго выпадающего списка
-    Kilometer: 'Kilometer',
-    Meter: 'Meter',
-    Centimeter: 'Centimeter',
-    Millimeter: 'Millimeter',
-  };
-
-  const firstSelectDropDown = document.getElementById('length-first-select'); // Получаем первый выпадающий список
-  const secondSelectDropDown = document.getElementById('length-second-select'); // Получаем второй выпадающий список
-
-  Object.keys(lengthFirstSelectValues).forEach((key) => { // заполняем 1
+const fillSelect = (selectOptions) => {
+  const select = document.getElementById(selectOptions.selectId);
+  Object.keys(selectOptions.options).forEach((key) => {
     const option = document.createElement('option');
-    option.setAttribute('value', lengthFirstSelectValues[key]);
+    option.setAttribute('value', selectOptions.options[key]);
 
     const optionText = document.createTextNode(key);
     option.appendChild(optionText);
 
-    firstSelectDropDown.appendChild(option);
-  });
-
-  Object.keys(lengthSecondSelectValues).forEach((key) => { // заполняем 2
-    const option = document.createElement('option');
-    option.setAttribute('value', lengthSecondSelectValues[key]);
-
-    const optionText = document.createTextNode(key);
-    option.appendChild(optionText);
-
-    secondSelectDropDown.appendChild(option);
+    select.appendChild(option);
   });
 };
 
-export const weigthFillSelects = () => {
+const lengthFillSelects = () => {
+  const speedOptionsOne = createSelectOptions('length-first-select', ['Kilometers', 'Meters', 'Centimeters', 'Millimeters']);
+  const speedOptionsTwo = createSelectOptions('length-second-select', ['Kilometers', 'Meters', 'Centimeters', 'Millimeters']);
+  fillSelect(speedOptionsOne);
+  fillSelect(speedOptionsTwo);
+};
 
+const weigthFillSelects = () => {
+  const speedOptionsOne = createSelectOptions('weigth-first-select', ['Kilograms', 'Gram', 'Ton', 'Pound', 'Ounce']);
+  const speedOptionsTwo = createSelectOptions('weigth-second-select', ['Kilograms', 'Gram', 'Ton', 'Pound', 'Ounce']);
+  fillSelect(speedOptionsOne);
+  fillSelect(speedOptionsTwo);
+};
+
+const speedFillSelects = () => {
+  const speedOptionsOne = createSelectOptions('speed-first-select', ['Kilometers', 'Miles', 'Knots']);
+  const speedOptionsTwo = createSelectOptions('speed-second-select', ['Kilometers', 'Miles', 'Knots']);
+  fillSelect(speedOptionsOne);
+  fillSelect(speedOptionsTwo);
+};
+
+export {
+  createSelectOptions, fillSelect, lengthFillSelects, speedFillSelects, weigthFillSelects,
 };

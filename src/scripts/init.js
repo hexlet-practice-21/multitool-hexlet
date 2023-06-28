@@ -1,11 +1,22 @@
-import { lengthFillSelects } from './dynamicSelectFill.js';
-import { lengthButtonResult } from './buttonResults.js';
-import { lengthButtonSwitch } from './buttonSwitch.js';
+import { lengthFillSelects, speedFillSelects, weigthFillSelects } from './dynamicSelectFill.js';
+import { lengthButtonResult, speedButtonResult, weigthButtonResult } from './buttonResults.js';
+import { lengthButtonSwitch, speedButtonSwitch, weigthButtonSwitch } from './buttonSwitch.js';
 
-document.addEventListener('DOMContentLoaded', lengthFillSelects);// Заполнение выпадающих списков длины (один раз при загрузке сайта)
+const clickListener = (buttonId, buttonFunction) => {
+  const button = document.getElementById(buttonId);
+  button.addEventListener('click', buttonFunction);
+};
 
-const lengthResultButton = document.getElementById('length-result-button'); // получим кнопку по айдишнику
-lengthResultButton.addEventListener('click', lengthButtonResult); // добавлям слушателя к нашей кнопке, при нажатие - будем вызвыать buttonResult
+document.addEventListener('DOMContentLoaded', lengthFillSelects);
+clickListener('length-result-button', lengthButtonResult);
+clickListener('length-switch-button', lengthButtonSwitch);
 
-const lengthSwitchButton = document.getElementById('length-switch-button'); // получим кнопку по айдишнику
-lengthSwitchButton.addEventListener('click', lengthButtonSwitch); // добавлям слушателя к нашей кнопке, при нажатие - будем вызвыать buttonSwitch
+document.addEventListener('DOMContentLoaded', weigthFillSelects);
+clickListener('weigth-result-button', weigthButtonResult);
+clickListener('weigth-switch-button', weigthButtonSwitch);
+
+document.addEventListener('DOMContentLoaded', speedFillSelects);
+clickListener('speed-result-button', speedButtonResult);
+clickListener('speed-switch-button', speedButtonSwitch);
+
+export default clickListener;
