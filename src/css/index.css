@@ -61,5 +61,11 @@ h3 {
     padding-left: 3px;
 }
 
+.data-form {
+    resize: none;
+    height: 20vh;
+}
 
-
+.main-cont {
+    padding-bottom: 30px;
+}
