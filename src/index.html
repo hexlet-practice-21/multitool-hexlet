@@ -18,7 +18,6 @@
                         <button class="nav-link active" id="nav-length-tab" data-bs-toggle="tab" data-bs-target="#nav-length" type="button" role="tab" aria-controls="nav-length" aria-selected="true">Length</button>
                         <button class="nav-link" id="nav-weight-tab" data-bs-toggle="tab" data-bs-target="#nav-weight" type="button" role="tab" aria-controls="nav-weight" aria-selected="false">Weight</button>
                         <button class="nav-link" id="nav-speed-tab" data-bs-toggle="tab" data-bs-target="#nav-speed" type="button" role="tab" aria-controls="nav-speed" aria-selected="false">Speed</button>
-                        <button class="nav-link" id="nav-data-formats-tab" data-bs-toggle="tab" data-bs-target="#nav-data-formats" type="button" role="tab" aria-controls="nav-data-formats" aria-selected="false">Data Formats</button>
                         <button class="nav-link" id="nav-volume-tab" data-bs-toggle="tab" data-bs-target="#nav-volume" type="button" role="tab" aria-controls="nav-volume" aria-selected="false">Volume</button>
                     </div>
                 </div>
@@ -100,30 +99,6 @@
                             </div>
 
                         </form>
-                    </div>
-                    <div class="tab-pane fade w-50 p-3" id="nav-data-formats" role="tabpanel" aria-labelledby="nav-data-formats-tab">
-                        <h3 class="text-center text-secondary">Сonverting different types of Data Formats</h3>
-                        <form action="#">
-                            <div class="row g-3 gy-3">
-                                <textarea class="form-control data-form" placeholder="Code" id="data-formats-number"></textarea>
-                                <div class="invalid-feedback" id="data-formats-number-validator">Please use only numbers</div>
-                                <label class="form-label">Convert From</label>
-                                <select class="form-select" name="select" id="data-formats-first-select">
-                                </select>
-                                <button type="button" class="btn btn-primary" id="data-formats-switch-button">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                                    </svg>                                    
-                                    Switch
-                                </button>
-                                <label class="form-label">Convert To</label>
-                                <select class="form-select" name="select" id="data-formats-second-select">
-                                </select>
-                                <button type="button" id="data-formats-result-button" class="btn btn-primary">Сalculate & Copy</button>
-                                <textarea class="form-control data-form" id="data-formats-result-output" disabled readonly></textarea>
-                            </div>
-                        </form> 
                     </div>
                     <div class="tab-pane fade w-50 p-3" id="nav-volume" role="tabpanel" aria-labelledby="nav-volume-tab"> 
                         <h3 class="text-center text-secondary">Сonverting different types of Volume</h3>

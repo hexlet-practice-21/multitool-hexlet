@@ -1,12 +1,11 @@
 import {
-  lengthFillSelects, speedFillSelects, weigthFillSelects, formatsFillSelects, volumeFillSelects,
+  lengthFillSelects, speedFillSelects, weigthFillSelects, volumeFillSelects,
 } from './dynamicSelectFill.js';
 import {
   lengthButtonResult, speedButtonResult, weigthButtonResult, volumeButtonResult,
 } from './buttonResults.js';
 import {
-  lengthButtonSwitch, speedButtonSwitch, weigthButtonSwitch,
-  formatsButtonSwitch, volumeButtonSwitch,
+  lengthButtonSwitch, speedButtonSwitch, weigthButtonSwitch, volumeButtonSwitch,
 } from './buttonSwitch.js';
 
 const clickListener = (buttonId, buttonFunction) => {
@@ -25,9 +24,6 @@ clickListener('weigth-switch-button', weigthButtonSwitch);
 document.addEventListener('DOMContentLoaded', speedFillSelects);
 clickListener('speed-result-button', speedButtonResult);
 clickListener('speed-switch-button', speedButtonSwitch);
-
-document.addEventListener('DOMContentLoaded', formatsFillSelects);
-clickListener('data-formats-switch-button', formatsButtonSwitch);
 
 document.addEventListener('DOMContentLoaded', volumeFillSelects);
 clickListener('volume-result-button', volumeButtonResult);

@@ -38,13 +38,6 @@ const speedFillSelects = () => {
   fillSelect(speedOptionsTwo);
 };
 
-const formatsFillSelects = () => {
-  const speedOptionsOne = createSelectOptions('data-formats-first-select', ['Yaml', 'Json']);
-  const speedOptionsTwo = createSelectOptions('data-formats-second-select', ['Yaml', 'Json']);
-  fillSelect(speedOptionsOne);
-  fillSelect(speedOptionsTwo);
-};
-
 const volumeFillSelects = () => {
   const volumeOptionsOne = createSelectOptions('volume-first-select', ['Liters', 'Milliliters', 'CubicMeter']);
   const volumeOptionsTwo = createSelectOptions('volume-second-select', ['Liters', 'Milliliters', 'CubicMeter']);
@@ -54,5 +47,5 @@ const volumeFillSelects = () => {
 
 export {
   createSelectOptions, fillSelect, lengthFillSelects, speedFillSelects,
-  weigthFillSelects, formatsFillSelects, volumeFillSelects,
+  weigthFillSelects, volumeFillSelects,
 };
