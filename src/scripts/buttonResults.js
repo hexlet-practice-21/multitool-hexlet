@@ -1,6 +1,7 @@
 import speedConversion from './conversion/speedConversion.js';
 import lengthConversion from './conversion/lengthConversion.js';
 import weigthConversion from './conversion/weigthConversion.js';
+import volumeConversion from './conversion/volumeConversion.js';
 
 const isNumeric = (string) => {
   const isEmpty = string !== '';
@@ -14,6 +15,7 @@ const isNumeric = (string) => {
   const isFirsZero = string[0] !== '0';
   return isNumber && isEmpty && isFirsZero;
 };
+
 
 const buttonResult = (input, validator, firstSelect, secondSelect, output, convertFunction) => {
   document.getElementById(validator).setAttribute('style', 'opacity: 0'); // сбрасывает ошибку
@@ -32,7 +34,6 @@ const buttonResult = (input, validator, firstSelect, secondSelect, output, conve
 const lengthButtonResult = () => buttonResult('length-number', 'length-number-validator', 'length-first-select', 'length-second-select', 'length-result-output', lengthConversion);
 const weigthButtonResult = () => buttonResult('weigth-number', 'weigth-number-validator', 'weigth-first-select', 'weigth-second-select', 'weigth-result-output', weigthConversion);
 const speedButtonResult = () => buttonResult('speed-number', 'speed-number-validator', 'speed-first-select', 'speed-second-select', 'speed-result-output', speedConversion);
-
-export {
-  lengthButtonResult, speedButtonResult, buttonResult, isNumeric, weigthButtonResult,
-};
+const volumeButtonResult = () => buttonResult('volume-number', 'volume-number-validator', 'volume-first-select', 'volume-second-select', 'volume-result-output', volumeConversion);
+export { lengthButtonResult, speedButtonResult, buttonResult };
+export { isNumeric, weigthButtonResult, volumeButtonResult };
