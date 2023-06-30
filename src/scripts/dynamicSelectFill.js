@@ -34,6 +34,7 @@ const weigthFillSelects = () => {
 const speedFillSelects = () => {
   const speedOptionsOne = createSelectOptions('speed-first-select', ['Kilometers', 'Miles', 'Knots']);
   const speedOptionsTwo = createSelectOptions('speed-second-select', ['Kilometers', 'Miles', 'Knots']);
+
   fillSelect(speedOptionsOne);
   fillSelect(speedOptionsTwo);
 };
@@ -48,4 +49,5 @@ const volumeFillSelects = () => {
 export {
   createSelectOptions, fillSelect, lengthFillSelects, speedFillSelects,
   weigthFillSelects, volumeFillSelects,
+
 };

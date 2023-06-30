@@ -16,6 +16,7 @@ const isNumeric = (string) => {
   return isNumber && isEmpty && isFirsZero;
 };
 
+
 const buttonResult = (input, validator, firstSelect, secondSelect, output, convertFunction) => {
   document.getElementById(validator).setAttribute('style', 'opacity: 0'); // сбрасывает ошибку
   const firstSelectResult = document.getElementById(firstSelect).value;
